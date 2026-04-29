@@ -1,0 +1,11 @@
+{
+    "type": "code",
+    "modid": "mineholme",
+    "name": "Mineholme",
+    "description": "The world below the surface is the world worth living in.",
+    "authors": [],
+    "version": "0.1.0",
+    "dependencies": {
+        "game": "1.22.0"
+    }
+}
