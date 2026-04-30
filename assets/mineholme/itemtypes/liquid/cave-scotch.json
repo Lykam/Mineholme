@@ -17,6 +17,7 @@
         ]}
     ],
     "attributes": {
+        "mineholme_inebriation_tier": 3,
         "handbook": { "groupBy": ["cave-scotch"] },
         "waterTightContainerProps": {
             "containable": true,

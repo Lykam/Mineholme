@@ -1,0 +1,20 @@
+[
+    {
+        "op": "add",
+        "path": "/attributes/mineholme_inebriation_tier",
+        "value": 1,
+        "file": { "domain": "game", "path": "itemtypes/liquid/alcohol" }
+    },
+    {
+        "op": "add",
+        "path": "/attributes/mineholme_inebriation_tier",
+        "value": 1,
+        "file": { "domain": "game", "path": "itemtypes/liquid/cider" }
+    },
+    {
+        "op": "add",
+        "path": "/attributes/mineholme_inebriation_tier",
+        "value": 2,
+        "file": { "domain": "game", "path": "itemtypes/liquid/spirit" }
+    }
+]

@@ -189,11 +189,16 @@ underground civilization; sober is the impaired state.
     The expedition drink. One swig before a deep run.
   - *Aqua vitae* — peak buffs, long duration, but easy to overshoot
     into vanilla's drunken-impairment penalties. The deliberate gamble.
-- Positive effects scale with current intoxication: mining speed, temporal
-  stability regen, minor combat resistance, expanded satiety cap.
+- Positive effects scale with current intoxication: mining speed, movement
+  speed, temporal stability regen, minor combat resistance.
 - Sober penalties scale inversely: as intoxication drops below a threshold,
   mining slows, temporal stability decays faster, a subtle visual effect
   warns the player.
+- Vanilla camera sway/tilt on intoxication is suppressed. The drunk camera
+  is disorienting and fights the mechanic — if being inebriated is the
+  desired baseline, the visual punishment must go. Buffs and penalties are
+  communicated through gameplay (speed, stability) and subtle HUD cues,
+  not camera movement.
 - Penalties scale with depth — being sober deep underground is genuinely
   punishing.
 - The "sweet spot" is roughly 0.6–0.9 intoxication (just below vanilla's

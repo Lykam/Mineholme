@@ -17,6 +17,7 @@
         ]}
     ],
     "attributes": {
+        "mineholme_inebriation_tier": 1,
         "handbook": { "groupBy": ["cave-ale"] },
         "distillationProps": {
             "distilledStack": {
