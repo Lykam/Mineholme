@@ -3,6 +3,8 @@
     "class": "BlockCavePlant",
     "drawtype": "JSON",
     "shape": { "base": "game:block/plant/mushroom/chanterelle/normal1" },
+    "shapeInventory": { "base": "game:item/food/mushroom/chanterelle" },
+    "guiTransform": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 3.5 },
     "attributes": {
         "forageStatAffected": true
     },

@@ -10,6 +10,7 @@ public class MinehomeMod : ModSystem
     {
         base.Start(api);
         api.RegisterBlockClass("BlockCavePlant", typeof(BlockCavePlant));
+        api.RegisterBlockClass("BlockCaveWallMushroom", typeof(BlockCaveWallMushroom));
     }
 
     public override void StartServerSide(ICoreServerAPI api)

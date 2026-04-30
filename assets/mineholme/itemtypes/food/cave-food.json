@@ -23,6 +23,9 @@
             "transitionRatio": 1
         }]
     },
+    "guiTransformByType": {
+        "*-cave-glowcap": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 3.5 }
+    },
     "creativeinventory": { "general": ["*"], "items": ["*"] },
     "materialDensity": 400
 }

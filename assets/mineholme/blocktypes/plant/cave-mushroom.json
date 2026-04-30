@@ -4,19 +4,27 @@
     "variantgroups": [
         { "code": "type", "states": [
             "chanterelle", "kingbolete", "commonmorel", "almondmushroom",
-            "fieldmushroom", "indigomilkcap", "pinkoyster", "whiteoyster",
-            "shiitake", "reishi", "saffronmilkcap", "lobster"
+            "fieldmushroom", "indigomilkcap", "shiitake", "saffronmilkcap", "lobster",
+            "flyagaric", "bitterbolete", "blacktrumpet", "deathcap", "devilstooth",
+            "devilbolete", "earthball", "elfinsaddle", "golddropmilkcap", "greencrackedrussula",
+            "jackolantern", "orangeoakbolete", "paddystraw", "puffball", "redwinecap",
+            "violetwebcap", "witchhat", "bluemeanie", "foolsconecap", "goldcap",
+            "honeymushroom", "laughingjim", "libertycap", "sickener", "wavycap"
         ]}
     ],
     "drawtype": "JSON",
     "shape": { "base": "game:block/plant/mushroom/{type}/normal1" },
     "drops": [
-        { "type": "block", "code": "game:mushroom-{type}-normal", "quantity": { "avg": 1, "var": 0 } }
+        { "type": "item", "code": "mineholme:cave-mushroom-drop-{type}", "quantity": { "avg": 1, "var": 0 } }
     ],
     "attributes": {
         "forageStatAffected": true
     },
     "shapeInventory": { "base": "game:item/food/mushroom/{type}" },
+    "guiTransformByType": {
+        "*-chanterelle": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 3.5 },
+        "*": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 2.5 }
+    },
     "creativeinventory": { "general": ["*"], "flora": ["*"] },
     "renderpass": "OpaqueNoCull",
     "randomizeRotations": true,

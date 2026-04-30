@@ -1,0 +1,44 @@
+{
+    "code": "cave-mushroom-drop",
+    "maxstacksize": 64,
+    "variantgroups": [
+        { "code": "type", "states": [
+            "chanterelle", "kingbolete", "commonmorel", "almondmushroom",
+            "fieldmushroom", "indigomilkcap", "shiitake", "saffronmilkcap", "lobster",
+            "flyagaric", "bitterbolete", "blacktrumpet", "deathcap", "devilstooth",
+            "devilbolete", "earthball", "elfinsaddle", "golddropmilkcap", "greencrackedrussula",
+            "jackolantern", "orangeoakbolete", "paddystraw", "puffball", "redwinecap",
+            "violetwebcap", "witchhat", "bluemeanie", "foolsconecap", "goldcap",
+            "honeymushroom", "laughingjim", "libertycap", "sickener", "wavycap",
+            "pinkoyster", "whiteoyster", "reishi",
+            "beardedtooth", "chickenofthewoods", "dryadsaddle",
+            "tinderhoof", "funeralbell", "deerear", "livermushroom", "pinkbonnet"
+        ]}
+    ],
+    "shape": { "base": "game:item/food/mushroom/{type}" },
+    "nutritionPropsByType": {
+        "*-bitterbolete":     { "satiety": 140, "health": -1,   "foodcategory": "Vegetable" },
+        "*-devilstooth":      { "satiety": 150, "health": -2,   "foodcategory": "Vegetable" },
+        "*-golddropmilkcap":  { "satiety": 155, "health": -2.5, "foodcategory": "Vegetable" },
+        "*-wavycap":          { "satiety": 170, "health": 0,    "foodcategory": "Vegetable", "psychedelic": 0.8 },
+        "*-goldcap":          { "satiety": 180, "health": 0,    "foodcategory": "Vegetable", "psychedelic": 1.0 },
+        "*-libertycap":       { "satiety": 195, "health": 0,    "foodcategory": "Vegetable", "psychedelic": 1.4 },
+        "*-jackolantern":     { "satiety": 190, "health": -6,   "foodcategory": "Vegetable" },
+        "*-flyagaric":        { "satiety": 200, "health": -6.5, "foodcategory": "Vegetable", "psychedelic": 0.4 },
+        "*-elfinsaddle":      { "satiety": 195, "health": -7,   "foodcategory": "Vegetable" },
+        "*-sickener":         { "satiety": 195, "health": -7,   "foodcategory": "Vegetable" },
+        "*-earthball":        { "satiety": 200, "health": -8,   "foodcategory": "Vegetable" },
+        "*-devilbolete":      { "satiety": 230, "health": -10,  "foodcategory": "Vegetable" },
+        "*-laughingjim":      { "satiety": 240, "health": -10,  "foodcategory": "Vegetable", "psychedelic": 0.6 },
+        "*-bluemeanie":       { "satiety": 220, "health": 0,    "foodcategory": "Vegetable", "psychedelic": 2.0 },
+        "*-foolsconecap":     { "satiety": 270, "health": -20,  "foodcategory": "Vegetable" },
+        "*-deathcap":         { "satiety": 340, "health": -50,  "foodcategory": "Vegetable" },
+        "*":                  { "satiety": 130, "health": 0,    "foodcategory": "Vegetable" }
+    },
+    "guiTransformByType": {
+        "*-chanterelle": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 3.5 },
+        "*": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 2.5 }
+    },
+    "creativeinventory": { "general": ["*"], "items": ["*"] },
+    "materialDensity": 200
+}

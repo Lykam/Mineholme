@@ -1,26 +1,26 @@
 [
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*", "value": { "satiety": 130, "health": 0, "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*", "value": { "satiety": 70, "health": 0, "foodcategory": "Vegetable" } },
 
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-bitterbolete-*",    "value": { "satiety": 140, "health": -1,   "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-devilstooth-*",     "value": { "satiety": 150, "health": -2,   "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-golddropmilkcap-*", "value": { "satiety": 155, "health": -2.5, "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-bitterbolete-*",    "value": { "satiety": 75, "health": -1,   "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-devilstooth-*",     "value": { "satiety": 78, "health": -2,   "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-golddropmilkcap-*", "value": { "satiety": 78, "health": -2.5, "foodcategory": "Vegetable" } },
 
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-wavycap-*",    "value": { "satiety": 170, "foodcategory": "Vegetable", "psychedelic": 0.8 } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-goldcap-*",    "value": { "satiety": 180, "foodcategory": "Vegetable", "psychedelic": 1.0 } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-libertycap-*", "value": { "satiety": 195, "foodcategory": "Vegetable", "psychedelic": 1.4 } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-wavycap-*",    "value": { "satiety": 80, "foodcategory": "Vegetable", "psychedelic": 0.8 } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-goldcap-*",    "value": { "satiety": 82, "foodcategory": "Vegetable", "psychedelic": 1.0 } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-libertycap-*", "value": { "satiety": 85, "foodcategory": "Vegetable", "psychedelic": 1.4 } },
 
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-jackolantern-*", "value": { "satiety": 190, "health": -6,   "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-flyagaric-*",   "value": { "satiety": 200, "health": -6.5, "foodcategory": "Vegetable", "psychedelic": 0.4 } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-elfinsaddle-*", "value": { "satiety": 195, "health": -7,   "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-sickener-*",    "value": { "satiety": 195, "health": -7,   "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-earthball-*",   "value": { "satiety": 200, "health": -8,   "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-jackolantern-*", "value": { "satiety": 80, "health": -6,   "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-flyagaric-*",   "value": { "satiety": 82, "health": -6.5, "foodcategory": "Vegetable", "psychedelic": 0.4 } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-elfinsaddle-*", "value": { "satiety": 80, "health": -7,   "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-sickener-*",    "value": { "satiety": 80, "health": -7,   "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-earthball-*",   "value": { "satiety": 82, "health": -8,   "foodcategory": "Vegetable" } },
 
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-devilbolete-*",  "value": { "satiety": 230, "health": -10,  "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-laughingjim-*", "value": { "satiety": 240, "health": -10,  "foodcategory": "Vegetable", "psychedelic": 0.6 } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-bluemeanie-*",  "value": { "satiety": 220, "foodcategory": "Vegetable", "psychedelic": 2.0 } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-devilbolete-*",  "value": { "satiety": 83, "health": -10,  "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-laughingjim-*", "value": { "satiety": 83, "health": -10,  "foodcategory": "Vegetable", "psychedelic": 0.6 } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-bluemeanie-*",  "value": { "satiety": 83, "foodcategory": "Vegetable", "psychedelic": 2.0 } },
 
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-foolsconecap-*", "value": { "satiety": 270, "health": -20, "foodcategory": "Vegetable" } },
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-deathcap-*",     "value": { "satiety": 340, "health": -50, "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-foolsconecap-*", "value": { "satiety": 85, "health": -20, "foodcategory": "Vegetable" } },
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/nutritionPropsByType/*-deathcap-*",     "value": { "satiety": 85, "health": -50, "foodcategory": "Vegetable" } },
 
-    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/attributes/nutritionPropsWhenInMeal/satiety", "value": 160 }
+    { "op": "replace", "file": "game:blocktypes/plant/mushroom.json", "path": "/attributes/nutritionPropsWhenInMeal/satiety", "value": 80 }
 ]

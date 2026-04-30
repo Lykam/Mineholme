@@ -1,0 +1,48 @@
+{
+    "code": "cave-mushroom-wall",
+    "class": "BlockCaveWallMushroom",
+    "variantgroups": [
+        { "code": "type", "states": [
+            "pinkoyster", "whiteoyster", "reishi",
+            "beardedtooth", "chickenofthewoods", "dryadsaddle",
+            "tinderhoof", "funeralbell", "deerear", "livermushroom", "pinkbonnet"
+        ]},
+        { "code": "side", "states": ["north", "east", "south", "west"] }
+    ],
+    "drawtype": "JSON",
+    "shapeByType": {
+        "*-north": { "base": "game:block/plant/mushroom/{type}/normal1", "rotateY": 180 },
+        "*-east":  { "base": "game:block/plant/mushroom/{type}/normal1", "rotateY": 90 },
+        "*-south": { "base": "game:block/plant/mushroom/{type}/normal1", "rotateY": 0 },
+        "*-west":  { "base": "game:block/plant/mushroom/{type}/normal1", "rotateY": 270 }
+    },
+    "shapeInventory": { "base": "game:item/food/mushroom/{type}" },
+    "guiTransform": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 2.5 },
+    "drops": [
+        { "type": "item", "code": "mineholme:cave-mushroom-drop-{type}", "quantity": { "avg": 1, "var": 0 } }
+    ],
+    "creativeinventory": { "general": ["*-north"], "flora": ["*-north"] },
+    "renderpass": "OpaqueNoCull",
+    "blockmaterial": "Plant",
+    "sideopaque": { "all": false },
+    "sidesolid": { "all": false },
+    "replaceable": 3000,
+    "lightAbsorption": 0,
+    "resistance": 1.5,
+    "collisionbox": null,
+    "selectionbox": {
+        "x1": 0.125, "y1": 0.125, "z1": 0.625, "x2": 0.875, "y2": 0.875, "z2": 1.0,
+        "rotateYByType": {
+            "*-north": 180,
+            "*-east":  90,
+            "*-south": 0,
+            "*-west":  270
+        }
+    },
+    "sounds": {
+        "place": "block/plant",
+        "break": "block/plant",
+        "hit":   "block/plant"
+    },
+    "materialDensity": 200
+}
