@@ -1,0 +1,28 @@
+{
+    "code": "cave-food",
+    "maxstacksize": 64,
+    "variantgroups": [
+        { "code": "type", "states": ["cave-moss", "cave-glowcap", "cave-root"] }
+    ],
+    "shapebytype": {
+        "*-cave-glowcap": { "base": "game:item/food/mushroom/chanterelle" },
+        "*-cave-moss":    { "base": "game:item/food/vegetable/fennel" },
+        "*-cave-root":    { "base": "game:item/food/vegetable/bambooshoot" }
+    },
+    "nutritionPropsByType": {
+        "*-cave-moss":    { "satiety": 100, "health": 1,   "foodcategory": "Vegetable" },
+        "*-cave-glowcap": { "satiety": 140, "health": 0,   "foodcategory": "Vegetable", "psychedelic": 0.3 },
+        "*-cave-root":    { "satiety": 160, "health": 0,   "foodcategory": "Vegetable" }
+    },
+    "transitionablePropsByType": {
+        "*": [{
+            "type": "Perish",
+            "freshHours": { "avg": 336 },
+            "transitionHours": { "avg": 72 },
+            "transitionedStack": { "type": "item", "code": "game:rot" },
+            "transitionRatio": 1
+        }]
+    },
+    "creativeinventory": { "general": ["*"], "items": ["*"] },
+    "materialDensity": 400
+}

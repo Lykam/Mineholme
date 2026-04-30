@@ -1,0 +1,47 @@
+[
+    {
+        "blockCodes": ["mineholme:cave-moss"],
+        "placement": "Underground",
+        "quantity": { "avg": 8, "var": 5 },
+        "offsetX": { "avg": 0, "var": 10 },
+        "offsetZ": { "avg": 0, "var": 10 },
+        "chance": 50
+    },
+    {
+        "blockCodes": ["mineholme:cave-root"],
+        "placement": "Underground",
+        "quantity": { "avg": 6, "var": 3 },
+        "offsetX": { "avg": 0, "var": 8 },
+        "offsetZ": { "avg": 0, "var": 8 },
+        "chance": 30
+    },
+    {
+        "blockCodes": ["mineholme:cave-glowcap"],
+        "placement": "Underground",
+        "quantity": { "avg": 5, "var": 3 },
+        "offsetX": { "avg": 0, "var": 8 },
+        "offsetZ": { "avg": 0, "var": 8 },
+        "chance": 15
+    },
+    {
+        "blockCodes": [
+            "mineholme:cave-mushroom-chanterelle",
+            "mineholme:cave-mushroom-kingbolete",
+            "mineholme:cave-mushroom-commonmorel",
+            "mineholme:cave-mushroom-almondmushroom",
+            "mineholme:cave-mushroom-fieldmushroom",
+            "mineholme:cave-mushroom-indigomilkcap",
+            "mineholme:cave-mushroom-pinkoyster",
+            "mineholme:cave-mushroom-whiteoyster",
+            "mineholme:cave-mushroom-shiitake",
+            "mineholme:cave-mushroom-reishi",
+            "mineholme:cave-mushroom-saffronmilkcap",
+            "mineholme:cave-mushroom-lobster"
+        ],
+        "placement": "Underground",
+        "quantity": { "avg": 4, "var": 2 },
+        "offsetX": { "avg": 0, "var": 8 },
+        "offsetZ": { "avg": 0, "var": 8 },
+        "chance": 40
+    }
+]

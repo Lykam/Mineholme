@@ -3,5 +3,29 @@
     "game:block-statictranslocator-normal-*": "Ancient Dwarven Gate",
     "game:block-handbooktitle-statictranslocator-broken-*": "How to restore:",
     "game:block-handbooktext-statictranslocator-broken-*": "This gate was cut by dwarven hands in an age before reckoning. With two <a href=\"handbook://block-metal-parts\">metal parts</a> and three <a href=\"handbook://item-gear-temporal\">temporal gears</a> it can be restored to working order.",
-    "game:block-tobtlocator-*": "Makeshift Dwarven Gate"
+    "game:block-tobtlocator-*": "Makeshift Dwarven Gate",
+
+    "block-cave-moss": "Cave Moss",
+    "block-cave-glowcap": "Glowcap",
+    "block-cave-root": "Cave Root",
+
+    "item-cave-food-cave-moss": "Cave Moss",
+    "item-cave-food-cave-glowcap": "Glowcap",
+    "item-cave-food-cave-root": "Cave Root",
+
+    "item-mushroomaleportion": "Deepbrew",
+    "incontainer-item-mushroomaleportion": "Deepbrew",
+
+    "block-cave-mushroom-chanterelle":   "Forgegold",
+    "block-cave-mushroom-kingbolete":    "Vault King",
+    "block-cave-mushroom-commonmorel":   "Riddlecap",
+    "block-cave-mushroom-almondmushroom":"Stonebread",
+    "block-cave-mushroom-fieldmushroom": "Dustcap",
+    "block-cave-mushroom-indigomilkcap": "Veinbleed",
+    "block-cave-mushroom-pinkoyster":    "Blushear",
+    "block-cave-mushroom-whiteoyster":   "Ghostshelf",
+    "block-cave-mushroom-shiitake":      "Deepbark",
+    "block-cave-mushroom-reishi":        "Lacquercap",
+    "block-cave-mushroom-saffronmilkcap":"Ironmilk",
+    "block-cave-mushroom-lobster":       "Bloodwrap"
 }

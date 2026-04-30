@@ -151,6 +151,13 @@ ones, so the player's diet naturally pulls them into caves.
   on-cave-walls) gives players foraging targets in dark places.
 - New cultivated mushroom blocks let the player farm fungi underground in
   the right conditions (low light, suitable substrate).
+- **Underground farming is superior to surface farming.** Crops grown on
+  farmland below the surface threshold (Y ≤ sealevel − 10, roughly) get a
+  yield bonus (~+50%) and grow faster (~25% shorter cycle). Crops grown on
+  the surface get a yield penalty (~−30%) and grow slower (~20% longer cycle).
+  The soil requirement is unchanged — players still need to bring or create
+  fertile farmland underground, which is intentional: it rewards investment
+  in a proper underground farm over opportunistic surface tilling.
 - Race-specific nutrition multipliers: Dwarves digest meat and ale better,
   Drow are carnivorous-leaning, Gnomes prefer grains.
 
@@ -158,6 +165,8 @@ ones, so the player's diet naturally pulls them into caves.
 - A surface-only farmer feels resource-starved compared to a mushroom-
   cultivating cave dweller.
 - Mushroom satiety is materially higher than surface vegetable satiety.
+- An underground farmer with hauled-in farmland out-produces a surface farmer
+  of equal effort, in both yield and time.
 - Players can sustain themselves indefinitely without ever tilling a surface
   field.
 
@@ -660,7 +669,9 @@ playable mod with no C# required, released to gather early feedback.
 
 **v0.2 — Inebriation and Brewing.** The Inebriation system, specialty
 named brews, brew quality tiers. Establishes the "drink is mandatory"
-identity. Mushroom ales added to the catalog.
+identity. Mushroom ales added to the catalog. Underground farming bonus
+and surface farming penalty (Y-level-aware crop yield and growth speed —
+first C# farming hook).
 
 **v0.3 — Smithing and Metallurgy.** Scrap recovery, smithing with bits,
 tool head repair, expanded molds, helve hammer fixes, cave-only ore

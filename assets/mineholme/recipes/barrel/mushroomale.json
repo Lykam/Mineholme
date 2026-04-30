@@ -1,0 +1,11 @@
+[
+    {
+        "code": "mushroomalebrew",
+        "sealHours": 480,
+        "ingredients": [
+            { "type": "item",  "code": "game:waterportion", "litres": 1 },
+            { "type": "block", "code": "mushroom-*-normal", "quantity": 5 }
+        ],
+        "output": { "type": "item", "code": "mineholme:mushroomaleportion", "litres": 0.2 }
+    }
+]

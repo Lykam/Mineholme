@@ -1,0 +1,5 @@
+[
+    { "op": "replace", "file": "game:itemtypes/liquid/cider.json",   "path": "/attributes/waterTightContainerProps/nutritionPropsPerLitre/satiety", "value": 150 },
+    { "op": "replace", "file": "game:itemtypes/liquid/spirit.json",  "path": "/attributes/waterTightContainerProps/nutritionPropsPerLitre/satiety", "value": 250 },
+    { "op": "replace", "file": "game:itemtypes/liquid/alcohol.json", "path": "/attributes/waterTightContainerProps/nutritionPropsPerLitre/satiety", "value": 150 }
+]
