@@ -2,7 +2,7 @@
     "ingredientPattern": "_P_,PTP,_P_",
     "ingredients": {
         "P": { "type": "item", "code": "game:metalplate-{metal}" },
-        "T": { "type": "item", "code": "game:torch-basic-lit-up" }
+        "T": { "type": "block", "code": "game:torch-basic-lit-up" }
     },
     "allowedVariants": {
         "metal": ["copper", "iron", "brass"]

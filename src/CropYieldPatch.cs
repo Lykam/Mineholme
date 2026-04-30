@@ -12,7 +12,7 @@ public class CropYieldPatch
     // Underground (artificial light ≥ 10, sunlight ≤ 2): +50% yield
     // Surface (sunlight ≥ 13): −30% yield
     [HarmonyPostfix]
-    public static void Postfix(BlockCrop __instance, IWorldAccessor world, BlockPos pos, IPlayer byPlayer, ref BlockDropItemStack[] __result)
+    public static void Postfix(IWorldAccessor world, BlockPos pos, ref ItemStack[] __result)
     {
         if (__result == null || __result.Length == 0) return;
         if (world.BlockAccessor.GetBlockEntity(pos.DownCopy()) is not BlockEntityFarmland) return;
@@ -31,10 +31,8 @@ public class CropYieldPatch
 
         foreach (var drop in __result)
         {
-            var q = drop.Quantity;
-            q.avg *= multiplier;
-            q.var *= multiplier;
-            drop.Quantity = q;
+            if (drop == null) continue;
+            drop.StackSize = Math.Max(0, (int)Math.Round(drop.StackSize * multiplier));
         }
     }
 }
