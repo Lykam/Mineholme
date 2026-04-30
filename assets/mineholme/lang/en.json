@@ -1,2 +1,7 @@
 {
+    "game:block-statictranslocator-broken-*": "Ruined Dwarven Gate",
+    "game:block-statictranslocator-normal-*": "Ancient Dwarven Gate",
+    "game:block-handbooktitle-statictranslocator-broken-*": "How to restore:",
+    "game:block-handbooktext-statictranslocator-broken-*": "This gate was cut by dwarven hands in an age before reckoning. With two <a href=\"handbook://block-metal-parts\">metal parts</a> and three <a href=\"handbook://item-gear-temporal\">temporal gears</a> it can be restored to working order.",
+    "game:block-tobtlocator-*": "Makeshift Dwarven Gate"
 }

@@ -1,0 +1,14 @@
+[
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/nutritionPropsByType/*", "value": { "satiety": 65, "foodcategory": "vegetable" } },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/nutritionPropsByType/*-cabbage", "value": { "satiety": 195, "foodcategory": "vegetable" } },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/nutritionPropsByType/*-pumpkin", "value": { "satiety": 90, "foodcategory": "vegetable" } },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/nutritionPropsByType/*-fennel", "value": { "satiety": 35, "foodcategory": "vegetable" } },
+
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*-cabbage/nutritionPropsWhenInMeal/satiety", "value": 295 },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*-pumpkin/nutritionPropsWhenInMeal/satiety", "value": 115 },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*-cassava/nutritionPropsWhenInMeal/satiety", "value": 80 },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*-bellpepper/nutritionPropsWhenInMeal/satiety", "value": 100 },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*-onion/nutritionPropsWhenInMeal/satiety", "value": 100 },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*-fennel/nutritionPropsWhenInMeal/satiety", "value": 40 },
+    { "op": "replace", "file": "game:itemtypes/food/vegetable.json", "path": "/attributesByType/*/nutritionPropsWhenInMeal/satiety", "value": 100 }
+]

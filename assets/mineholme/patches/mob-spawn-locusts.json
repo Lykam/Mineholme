@@ -1,0 +1,16 @@
+[
+    {
+        "op": "replace",
+        "file": "game:entities/lore/locust.json",
+        "path": "/server/spawnconditionsByType/*-corrupt-sawblade/runtime/maxQuantity",
+        "value": 6,
+        "side": "Server"
+    },
+    {
+        "op": "replace",
+        "file": "game:entities/lore/locust.json",
+        "path": "/server/spawnconditionsByType/*-corrupt-sawblade/runtime/chance",
+        "value": 0.003,
+        "side": "Server"
+    }
+]

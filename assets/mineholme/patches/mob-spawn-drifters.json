@@ -1,0 +1,37 @@
+[
+    {
+        "op": "replace",
+        "file": "game:entities/lore/drifter.json",
+        "path": "/server/spawnconditions/runtime/maxQuantityByType/*-deep",
+        "value": 8,
+        "side": "Server"
+    },
+    {
+        "op": "replace",
+        "file": "game:entities/lore/drifter.json",
+        "path": "/server/spawnconditions/runtime/maxQuantityByType/*-tainted",
+        "value": 6,
+        "side": "Server"
+    },
+    {
+        "op": "replace",
+        "file": "game:entities/lore/drifter.json",
+        "path": "/server/spawnconditions/runtime/maxQuantityByType/*-corrupt",
+        "value": 5,
+        "side": "Server"
+    },
+    {
+        "op": "replace",
+        "file": "game:entities/lore/drifter.json",
+        "path": "/server/spawnconditions/runtime/maxQuantityByType/*-nightmare",
+        "value": 4,
+        "side": "Server"
+    },
+    {
+        "op": "replace",
+        "file": "game:entities/lore/drifter.json",
+        "path": "/server/spawnconditions/runtime/groupSizeByType/*",
+        "value": { "dist": "uniform", "avg": 2, "var": 1 },
+        "side": "Server"
+    }
+]

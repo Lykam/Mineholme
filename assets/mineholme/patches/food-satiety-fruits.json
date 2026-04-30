@@ -1,0 +1,8 @@
+[
+    { "op": "replace", "file": "game:itemtypes/food/fruit.json", "path": "/nutritionPropsByType/*", "value": { "satiety": 55, "foodcategory": "Fruit" } },
+    { "op": "replace", "file": "game:itemtypes/food/fruit.json", "path": "/nutritionPropsByType/*-breadfruit", "value": { "satiety": 130, "foodcategory": "Fruit" } },
+    { "op": "replace", "file": "game:itemtypes/food/fruit.json", "path": "/nutritionPropsByType/*-saguaro", "value": { "satiety": 40, "health": 1, "foodcategory": "Fruit" } },
+    { "op": "replace", "file": "game:itemtypes/food/fruit.json", "path": "/nutritionPropsByType/*-cranberry", "value": { "satiety": 40, "foodcategory": "Fruit" } },
+    { "op": "replace", "file": "game:itemtypes/food/fruit.json", "path": "/nutritionPropsByType/*-cherry", "value": { "satiety": 25, "foodcategory": "Fruit" } },
+    { "op": "replace", "file": "game:itemtypes/food/fruit.json", "path": "/nutritionPropsByType/*-lychee", "value": { "satiety": 25, "foodcategory": "Fruit" } }
+]
