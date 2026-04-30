@@ -9,8 +9,8 @@ namespace Mineholme;
 [HarmonyPatch(typeof(BlockEntityFarmland), nameof(BlockEntityFarmland.GetHoursForNextStage))]
 public class FarmlandGrowthPatch
 {
-    // Artificial light ≥ 10 with sunlight ≤ 2: underground bonus (1.5× growth speed)
-    // Sunlight ≥ 13: surface penalty (1.5× slower)
+    // Artificial light ≥ 10 with sunlight ≤ 2: underground bonus (~25% shorter cycle)
+    // Sunlight ≥ 13: surface penalty (~20% longer cycle)
     // Anything else: no modifier
     [HarmonyPostfix]
     public static void Postfix(BlockEntityFarmland __instance, ref double __result)
@@ -23,8 +23,8 @@ public class FarmlandGrowthPatch
         int artificialLight = Math.Max(0, totalLight - sunLight);
 
         if (sunLight >= 13)
-            __result *= 1.5;   // surface penalty
+            __result *= 1.2;  // surface penalty
         else if (artificialLight >= 10 && sunLight <= 2)
-            __result *= 0.667; // underground bonus
+            __result *= 0.75; // underground bonus
     }
 }
