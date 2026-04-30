@@ -1,0 +1,24 @@
+{
+    "code": "dwarven-dish",
+    "maxstacksize": 64,
+    "variantgroups": [
+        { "code": "type", "states": ["stonebread", "spore-hash", "moss-broth"] }
+    ],
+    "shapebytype": {
+        "*-stonebread":  { "base": "game:item/food/vegetable/fennel" },
+        "*-spore-hash":  { "base": "game:item/food/mushroom/chanterelle" },
+        "*-moss-broth":  { "base": "game:item/food/vegetable/bambooshoot" }
+    },
+    "nutritionPropsByType": {
+        "*-stonebread":  { "satiety": 500, "health": 0, "foodcategory": "Grain" },
+        "*-spore-hash":  { "satiety": 380, "health": 1, "foodcategory": "Vegetable" },
+        "*-moss-broth":  { "satiety": 150, "health": 2, "foodcategory": "Vegetable" }
+    },
+    "transitionablePropsByType": {
+        "*-stonebread": [{ "type": "Perish", "freshHours": { "avg": 720 }, "transitionHours": { "avg": 72 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-spore-hash":  [{ "type": "Perish", "freshHours": { "avg": 336 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-moss-broth":  [{ "type": "Perish", "freshHours": { "avg": 480 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }]
+    },
+    "creativeinventory": { "general": ["*"], "items": ["*"] },
+    "materialDensity": 400
+}

@@ -1,0 +1,32 @@
+[
+    {
+        "ingredientPattern": "MM\nFF",
+        "ingredients": {
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*" },
+            "F": { "type": "item", "code": "game:flour-*" }
+        },
+        "width": 2,
+        "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-stonebread", "quantity": 2 }
+    },
+    {
+        "ingredientPattern": "MM\nR ",
+        "ingredients": {
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*" },
+            "R": { "type": "item", "code": "mineholme:cave-food-cave-root" }
+        },
+        "width": 2,
+        "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-spore-hash", "quantity": 1 }
+    },
+    {
+        "ingredientPattern": " G \nMMM",
+        "ingredients": {
+            "G": { "type": "item", "code": "mineholme:cave-food-cave-glowcap" },
+            "M": { "type": "item", "code": "mineholme:cave-food-cave-moss" }
+        },
+        "width": 3,
+        "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-moss-broth", "quantity": 2 }
+    }
+]
