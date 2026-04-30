@@ -1,0 +1,19 @@
+{
+    "code": "dwarven-barrel-decor",
+    "drawtype": "JSON",
+    "shape": { "base": "game:block/clutter/barrel-metal1" },
+    "textures": {
+        "blackbronze2": { "base": "game:block/metal/sheet/iron1" }
+    },
+    "blockmaterial": "Metal",
+    "sideopaque": { "all": false },
+    "sidesolid": { "all": false },
+    "lightAbsorption": 0,
+    "resistance": 3,
+    "sounds": {
+        "place": "block/anvil",
+        "break": "block/anvil",
+        "hit": "block/anvil"
+    },
+    "creativeinventory": { "general": ["*"], "decorative": ["*"] }
+}

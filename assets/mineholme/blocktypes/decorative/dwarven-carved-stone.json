@@ -1,0 +1,19 @@
+{
+    "code": "dwarven-carved-stone",
+    "variantgroups": [
+        { "code": "rock", "states": ["granite", "basalt", "whitemarble"] }
+    ],
+    "drawtype": "cube",
+    "shape": { "base": "game:block/basic/cube" },
+    "textures": {
+        "all": { "base": "game:block/stone/polishedrock/{rock}" }
+    },
+    "blockmaterial": "Stone",
+    "resistance": 6,
+    "sounds": {
+        "place": "block/stone",
+        "break": "block/stone",
+        "hit": "block/stone"
+    },
+    "creativeinventory": { "general": ["*"], "decorative": ["*"] }
+}

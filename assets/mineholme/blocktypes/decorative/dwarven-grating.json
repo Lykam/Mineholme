@@ -1,0 +1,19 @@
+{
+    "code": "dwarven-grating",
+    "drawtype": "JSON",
+    "shape": { "base": "game:block/clay/grating" },
+    "textures": {
+        "front1": { "base": "game:block/metal/plate/iron" }
+    },
+    "blockmaterial": "Metal",
+    "sideopaque": { "all": false },
+    "sidesolid": { "all": false },
+    "lightAbsorption": 0,
+    "resistance": 4,
+    "sounds": {
+        "place": "block/anvil",
+        "break": "block/anvil",
+        "hit": "block/anvil"
+    },
+    "creativeinventory": { "general": ["*"], "decorative": ["*"] }
+}
