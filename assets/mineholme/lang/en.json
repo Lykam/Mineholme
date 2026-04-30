@@ -422,11 +422,15 @@
     "item-dwarven-dish-spore-hash":  "Spore Hash",
     "item-dwarven-dish-moss-broth":  "Moss Broth",
 
+    "block-dwarven-brazier-copper":        "Dwarven Copper Brazier",
     "block-dwarven-brazier-iron":          "Dwarven Iron Brazier",
     "block-dwarven-brazier-brass":         "Dwarven Brass Brazier",
     "block-dwarven-barrel-decor":          "Dwarven Iron Barrel",
     "block-dwarven-carved-stone-granite":  "Dwarven Carved Granite",
     "block-dwarven-carved-stone-basalt":   "Dwarven Carved Basalt",
     "block-dwarven-carved-stone-whitemarble": "Dwarven Carved Marble",
-    "block-dwarven-grating":               "Dwarven Iron Grating"
+    "block-dwarven-grating":               "Dwarven Iron Grating",
+
+    "block-copper-torchholder-*":          "Copper Torch Holder",
+    "block-copper-torchholder-empty-*":   "Empty Copper Torch Holder"
 }

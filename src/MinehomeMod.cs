@@ -1,3 +1,4 @@
+using HarmonyLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
@@ -6,11 +7,16 @@ namespace Mineholme;
 
 public class MinehomeMod : ModSystem
 {
+    private Harmony? harmony;
+
     public override void Start(ICoreAPI api)
     {
         base.Start(api);
         api.RegisterBlockClass("BlockCavePlant", typeof(BlockCavePlant));
         api.RegisterBlockClass("BlockCaveWallMushroom", typeof(BlockCaveWallMushroom));
+
+        harmony = new Harmony("mineholme");
+        harmony.PatchAll();
     }
 
     public override void StartServerSide(ICoreServerAPI api)
@@ -25,6 +31,7 @@ public class MinehomeMod : ModSystem
 
     public override void Dispose()
     {
+        harmony?.UnpatchAll("mineholme");
         base.Dispose();
     }
 }
