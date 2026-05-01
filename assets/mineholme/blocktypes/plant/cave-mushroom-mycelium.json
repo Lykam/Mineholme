@@ -1,0 +1,22 @@
+{
+    "code": "cave-mushroom-mycelium",
+    "blockEntityClass": "BlockEntityCaveMushroomMycelium",
+    "drawtype": "JSON",
+    "shape": { "base": "game:block/plant/mushroom/fieldmushroom/harvested1" },
+    "blockmaterial": "Plant",
+    "sideopaque": { "all": false },
+    "sidesolid": { "all": false },
+    "replaceable": 3000,
+    "lightAbsorption": 0,
+    "resistance": 0.5,
+    "collisionbox": null,
+    "selectionbox": { "x1": 0.25, "y1": 0, "z1": 0.25, "x2": 0.75, "y2": 0.125, "z2": 0.75 },
+    "renderpass": "OpaqueNoCull",
+    "randomizeRotations": true,
+    "sounds": {
+        "place": "block/plant",
+        "break": "block/plant",
+        "hit": "block/plant"
+    },
+    "materialDensity": 200
+}

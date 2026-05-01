@@ -2,22 +2,50 @@
     "code": "dwarven-dish",
     "maxstacksize": 64,
     "variantgroups": [
-        { "code": "type", "states": ["stonebread", "spore-hash", "moss-broth"] }
+        { "code": "type", "states": [
+            "stonebread-mine", "stonebread-move", "stonebread-stab",
+            "spore-hash-mine", "spore-hash-move", "spore-hash-stab",
+            "moss-broth"
+        ]}
     ],
     "shapebytype": {
-        "*-stonebread":  { "base": "game:item/food/vegetable/fennel" },
-        "*-spore-hash":  { "base": "game:item/food/mushroom/chanterelle" },
-        "*-moss-broth":  { "base": "game:item/food/vegetable/bambooshoot" }
+        "*-stonebread-mine": { "base": "game:item/food/bread/speltbread" },
+        "*-stonebread-move": { "base": "game:item/food/bread/speltbread" },
+        "*-stonebread-stab": { "base": "game:item/food/bread/speltbread" },
+        "*-spore-hash-mine": { "base": "mineholme:item/food/cave-dish" },
+        "*-spore-hash-move": { "base": "mineholme:item/food/cave-dish" },
+        "*-spore-hash-stab": { "base": "mineholme:item/food/cave-dish" },
+        "*-moss-broth":      { "base": "mineholme:item/food/cave-dish" }
     },
     "nutritionPropsByType": {
-        "*-stonebread":  { "satiety": 500, "health": 0, "foodcategory": "Grain" },
-        "*-spore-hash":  { "satiety": 380, "health": 1, "foodcategory": "Vegetable" },
-        "*-moss-broth":  { "satiety": 150, "health": 2, "foodcategory": "Vegetable" }
+        "*-stonebread-mine": { "satiety": 500, "health": 0, "foodcategory": "Grain" },
+        "*-stonebread-move": { "satiety": 500, "health": 0, "foodcategory": "Grain" },
+        "*-stonebread-stab": { "satiety": 500, "health": 0, "foodcategory": "Grain" },
+        "*-spore-hash-mine": { "satiety": 380, "health": 1, "foodcategory": "Vegetable" },
+        "*-spore-hash-move": { "satiety": 380, "health": 1, "foodcategory": "Vegetable" },
+        "*-spore-hash-stab": { "satiety": 380, "health": 1, "foodcategory": "Vegetable" },
+        "*-moss-broth":      { "satiety": 150, "health": 2, "foodcategory": "Vegetable" }
     },
     "transitionablePropsByType": {
-        "*-stonebread": [{ "type": "Perish", "freshHours": { "avg": 720 }, "transitionHours": { "avg": 72 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
-        "*-spore-hash":  [{ "type": "Perish", "freshHours": { "avg": 336 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
-        "*-moss-broth":  [{ "type": "Perish", "freshHours": { "avg": 480 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }]
+        "*-stonebread-mine": [{ "type": "Perish", "freshHours": { "avg": 720 }, "transitionHours": { "avg": 72 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-stonebread-move": [{ "type": "Perish", "freshHours": { "avg": 720 }, "transitionHours": { "avg": 72 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-stonebread-stab": [{ "type": "Perish", "freshHours": { "avg": 720 }, "transitionHours": { "avg": 72 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-spore-hash-mine": [{ "type": "Perish", "freshHours": { "avg": 336 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-spore-hash-move": [{ "type": "Perish", "freshHours": { "avg": 336 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-spore-hash-stab": [{ "type": "Perish", "freshHours": { "avg": 336 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }],
+        "*-moss-broth":      [{ "type": "Perish", "freshHours": { "avg": 480 }, "transitionHours": { "avg": 48 }, "transitionedStack": { "type": "item", "code": "game:rot" }, "transitionRatio": 1 }]
+    },
+    "guiTransformByType": {
+        "*-stonebread-mine": { "rotation": { "x": -30, "y": 26, "z": 180 }, "origin": { "x": 0.52, "y": 0.07, "z": 0.5 }, "scale": 4.9 },
+        "*-stonebread-move": { "rotation": { "x": -30, "y": 26, "z": 180 }, "origin": { "x": 0.52, "y": 0.07, "z": 0.5 }, "scale": 4.9 },
+        "*-stonebread-stab": { "rotation": { "x": -30, "y": 26, "z": 180 }, "origin": { "x": 0.52, "y": 0.07, "z": 0.5 }, "scale": 4.9 },
+        "*-spore-hash-mine": { "rotation": { "x": -35, "y": 45, "z": 180 }, "origin": { "x": 0.5, "y": 0.0625, "z": 0.5 }, "scale": 2.5 },
+        "*-spore-hash-move": { "rotation": { "x": -35, "y": 45, "z": 180 }, "origin": { "x": 0.5, "y": 0.0625, "z": 0.5 }, "scale": 2.5 },
+        "*-spore-hash-stab": { "rotation": { "x": -35, "y": 45, "z": 180 }, "origin": { "x": 0.5, "y": 0.0625, "z": 0.5 }, "scale": 2.5 },
+        "*-moss-broth":      { "rotation": { "x": -35, "y": 45, "z": 180 }, "origin": { "x": 0.5, "y": 0.0625, "z": 0.5 }, "scale": 2.5 }
+    },
+    "textures": {
+        "mat": { "base": "game:block/clay/ceramic" }
     },
     "creativeinventory": { "general": ["*"], "items": ["*"] },
     "materialDensity": 400

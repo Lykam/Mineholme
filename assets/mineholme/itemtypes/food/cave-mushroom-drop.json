@@ -1,5 +1,6 @@
 {
     "code": "cave-mushroom-drop",
+    "class": "ItemCaveMushroomDrop",
     "maxstacksize": 64,
     "variantgroups": [
         { "code": "type", "states": [

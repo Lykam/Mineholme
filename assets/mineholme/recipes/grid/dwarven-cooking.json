@@ -2,31 +2,71 @@
     {
         "ingredientPattern": "MM\nFF",
         "ingredients": {
-            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*" },
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*",
+                   "allowedVariants": ["chanterelle","kingbolete","commonmorel","almondmushroom","fieldmushroom","indigomilkcap","shiitake","saffronmilkcap","lobster","earthball","golddropmilkcap","beardedtooth","chickenofthewoods","dryadsaddle","tinderhoof"] },
             "F": { "type": "item", "code": "game:flour-*" }
         },
-        "width": 2,
-        "height": 2,
-        "output": { "type": "item", "code": "mineholme:dwarven-dish-stonebread", "quantity": 2 }
+        "width": 2, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-stonebread-mine", "quantity": 2 }
+    },
+    {
+        "ingredientPattern": "MM\nFF",
+        "ingredients": {
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*",
+                   "allowedVariants": ["bitterbolete","blacktrumpet","elfinsaddle","greencrackedrussula","orangeoakbolete","puffball","redwinecap","goldcap","honeymushroom","wavycap","pinkoyster","whiteoyster","paddystraw","sickener","deerear"] },
+            "F": { "type": "item", "code": "game:flour-*" }
+        },
+        "width": 2, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-stonebread-move", "quantity": 2 }
+    },
+    {
+        "ingredientPattern": "MM\nFF",
+        "ingredients": {
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*",
+                   "allowedVariants": ["flyagaric","deathcap","devilstooth","devilbolete","jackolantern","violetwebcap","witchhat","bluemeanie","foolsconecap","laughingjim","libertycap","reishi","funeralbell","livermushroom","pinkbonnet"] },
+            "F": { "type": "item", "code": "game:flour-*" }
+        },
+        "width": 2, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-stonebread-stab", "quantity": 2 }
     },
     {
         "ingredientPattern": "MM\nR ",
         "ingredients": {
-            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*" },
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*",
+                   "allowedVariants": ["chanterelle","kingbolete","commonmorel","almondmushroom","fieldmushroom","indigomilkcap","shiitake","saffronmilkcap","lobster","earthball","golddropmilkcap","beardedtooth","chickenofthewoods","dryadsaddle","tinderhoof"] },
             "R": { "type": "item", "code": "mineholme:cave-food-cave-root" }
         },
-        "width": 2,
-        "height": 2,
-        "output": { "type": "item", "code": "mineholme:dwarven-dish-spore-hash", "quantity": 1 }
+        "width": 2, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-spore-hash-mine", "quantity": 1 }
     },
     {
-        "ingredientPattern": " G \nMMM",
+        "ingredientPattern": "MM\nR ",
         "ingredients": {
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*",
+                   "allowedVariants": ["bitterbolete","blacktrumpet","elfinsaddle","greencrackedrussula","orangeoakbolete","puffball","redwinecap","goldcap","honeymushroom","wavycap","pinkoyster","whiteoyster","paddystraw","sickener","deerear"] },
+            "R": { "type": "item", "code": "mineholme:cave-food-cave-root" }
+        },
+        "width": 2, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-spore-hash-move", "quantity": 1 }
+    },
+    {
+        "ingredientPattern": "MM\nR ",
+        "ingredients": {
+            "M": { "type": "item", "code": "mineholme:cave-mushroom-drop-*",
+                   "allowedVariants": ["flyagaric","deathcap","devilstooth","devilbolete","jackolantern","violetwebcap","witchhat","bluemeanie","foolsconecap","laughingjim","libertycap","reishi","funeralbell","livermushroom","pinkbonnet"] },
+            "R": { "type": "item", "code": "mineholme:cave-food-cave-root" }
+        },
+        "width": 2, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-spore-hash-stab", "quantity": 1 }
+    },
+    {
+        "ingredientPattern": "BG \nMMM",
+        "ingredients": {
+            "B": { "type": "block", "code": "game:bowl-*" },
             "G": { "type": "item", "code": "mineholme:cave-food-cave-glowcap" },
             "M": { "type": "item", "code": "mineholme:cave-food-cave-moss" }
         },
-        "width": 3,
-        "height": 2,
-        "output": { "type": "item", "code": "mineholme:dwarven-dish-moss-broth", "quantity": 2 }
+        "width": 3, "height": 2,
+        "output": { "type": "item", "code": "mineholme:dwarven-dish-moss-broth", "quantity": 1 }
     }
 ]

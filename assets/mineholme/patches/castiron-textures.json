@@ -1,0 +1,82 @@
+[
+    {
+        "op": "add",
+        "file": "game:itemtypes/resource/workitem",
+        "path": "/textureByType",
+        "value": { "workitem-castiron": { "base": "game:block/metal/ingot/iron" } }
+    },
+    {
+        "op": "add",
+        "file": "game:itemtypes/resource/ingot",
+        "path": "/texturesByType",
+        "value": { "ingot-castiron": { "metal": { "base": "game:block/metal/ingot/iron" } } }
+    },
+    {
+        "op": "add",
+        "file": "game:blocktypes/metal/metalblock",
+        "path": "/texturesByType/metalblock-new-plain-castiron",
+        "value": {
+            "all": {
+                "base": "game:block/metal/sheet-plain/iron1",
+                "alternates": [
+                    { "base": "game:block/metal/sheet-plain/iron2" },
+                    { "base": "game:block/metal/sheet-plain/iron3" },
+                    { "base": "game:block/metal/sheet-plain/iron4" }
+                ]
+            }
+        }
+    },
+    {
+        "op": "add",
+        "file": "game:blocktypes/metal/metalblock",
+        "path": "/texturesByType/metalblock-new-riveted-castiron",
+        "value": {
+            "all": {
+                "base": "game:block/metal/sheet/iron1",
+                "alternates": [
+                    { "base": "game:block/metal/sheet/iron2" },
+                    { "base": "game:block/metal/sheet/iron3" },
+                    { "base": "game:block/metal/sheet/iron4" },
+                    { "base": "game:block/metal/sheet/iron5" }
+                ]
+            }
+        }
+    },
+    {
+        "op": "add",
+        "file": "game:blocktypes/metal/metalblock",
+        "path": "/texturesByType/metalblock-corroded-plain-castiron",
+        "value": {
+            "all": { "base": "game:block/metal/tarnished/iron" }
+        }
+    },
+    {
+        "op": "add",
+        "file": "game:blocktypes/metal/metalblock",
+        "path": "/texturesByType/metalblock-corroded-riveted-castiron",
+        "value": {
+            "all": {
+                "base": "game:block/metal/tarnished/iron",
+                "overlays": [ "game:block/metal/rivetslarge4x4" ]
+            }
+        }
+    },
+    {
+        "op": "add",
+        "file": "game:blocktypes/metal/sheet",
+        "path": "/texturesByType",
+        "value": {
+            "metalsheet-castiron-*": {
+                "all": {
+                    "base": "game:block/metal/sheet/iron1",
+                    "alternates": [
+                        { "base": "game:block/metal/sheet/iron2" },
+                        { "base": "game:block/metal/sheet/iron3" },
+                        { "base": "game:block/metal/sheet/iron4" },
+                        { "base": "game:block/metal/sheet/iron5" }
+                    ]
+                }
+            }
+        }
+    }
+]

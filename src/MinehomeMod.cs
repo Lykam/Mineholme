@@ -16,6 +16,11 @@ public class MinehomeMod : ModSystem
         base.Start(api);
         api.RegisterBlockClass("BlockCavePlant", typeof(BlockCavePlant));
         api.RegisterBlockClass("BlockCaveWallMushroom", typeof(BlockCaveWallMushroom));
+        api.RegisterBlockClass("BlockCaveMushroomFloor", typeof(BlockCaveMushroomFloor));
+        api.RegisterBlockClass("BlockMagmaForge", typeof(BlockMagmaForge));
+        api.RegisterItemClass("ItemBrokenToolHead", typeof(ItemBrokenToolHead));
+        api.RegisterItemClass("ItemCaveMushroomDrop", typeof(ItemCaveMushroomDrop));
+        api.RegisterBlockEntityClass("BlockEntityCaveMushroomMycelium", typeof(BlockEntityCaveMushroomMycelium));
 
         harmony = new Harmony("mineholme");
         harmony.PatchAll();
