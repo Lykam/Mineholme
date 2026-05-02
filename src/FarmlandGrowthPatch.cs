@@ -47,7 +47,7 @@ public class FarmlandTooltipPatch
         int totalLight = world.BlockAccessor.GetLightLevel(cropPos, EnumLightLevelType.MaxLight);
         int artificialLight = Math.Max(0, totalLight - sunLight);
 
-        string line = sunLight >= 13
+        string? line = sunLight >= 13
             ? Lang.Get("mineholme:farmland-surface-penalty")
             : (artificialLight >= 10 && sunLight <= 2 ? Lang.Get("mineholme:farmland-underground-bonus") : null);
 

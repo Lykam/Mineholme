@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using HarmonyLib;
 using Vintagestory.API.Common;
 using Vintagestory.API.MathTools;
@@ -22,6 +23,11 @@ static class AnvilCheckIfFinishedPatch
         public required SmithingRecipe Recipe;
     }
 
+    // ItemHammer fires OnUseOver on the server BlockEntity directly (client-side call)
+    // AND the server fires it again via OnReceivedClientPacket. Both complete CheckIfFinished
+    // in the same tick on the same shared instance. Guard against the duplicate.
+    static readonly Dictionary<int, long> _lastScrapMs = new();
+
     [HarmonyPrefix]
     static void Prefix(BlockEntityAnvil __instance, ref FinishState? __state)
     {
@@ -43,6 +49,14 @@ static class AnvilCheckIfFinishedPatch
         if (__instance.WorkItemStack != null) return; // recipe did not complete
         if (__instance.Api.World.Side != EnumAppSide.Server) return;
 
+        // Deduplicate: client path and server packet path both complete the recipe in the same
+        // tick. Only spawn bits once per anvil per smithing completion event.
+        int posKey = __instance.Pos.GetHashCode();
+        long nowMs = __instance.Api.World.ElapsedMilliseconds;
+        if (_lastScrapMs.TryGetValue(posKey, out long lastMs) && nowMs - lastMs < 500)
+            return;
+        _lastScrapMs[posKey] = nowMs;
+
         // Count recipe voxels.
         int recipeVoxels = 0;
         bool[,,] rv = __state.Recipe.Voxels;
@@ -59,14 +73,14 @@ static class AnvilCheckIfFinishedPatch
         int bits = (int)Math.Floor(scrappedVoxels / 2.1);
         if (bits <= 0) return;
 
-        string? metal = __state.WorkItem.Collectible.Variant["metal"];
+        string? metal = __state.WorkItem.Collectible?.Variant["metal"];
         if (string.IsNullOrEmpty(metal)) return;
 
         Item? bitItem = __instance.Api.World.GetItem(new AssetLocation($"game:metalbit-{metal}"));
         if (bitItem == null) return;
 
         var bitStack = new ItemStack(bitItem, bits);
-        float temp = __state.WorkItem.Collectible.GetTemperature(__instance.Api.World, __state.WorkItem);
+        float temp = __state.WorkItem.Collectible?.GetTemperature(__instance.Api.World, __state.WorkItem) ?? 0f;
         bitItem.SetTemperature(__instance.Api.World, bitStack, temp);
 
         __instance.Api.World.SpawnItemEntity(bitStack,
