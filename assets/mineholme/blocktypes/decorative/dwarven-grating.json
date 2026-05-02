@@ -5,6 +5,9 @@
     "textures": {
         "front1": { "base": "game:block/metal/plate/iron" }
     },
+    "guiTransform": {
+        "origin": { "x": 0.5, "y": 0.8, "z": 0.5 }
+    },
     "blockmaterial": "Metal",
     "sideopaque": { "all": false },
     "sidesolid": { "all": false },

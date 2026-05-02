@@ -1,0 +1,20 @@
+[
+    {
+        "op": "add",
+        "file": "game:itemtypes/liquid/alcohol",
+        "path": "/attributes/mineholme_inebriation_tier",
+        "value": 1
+    },
+    {
+        "op": "add",
+        "file": "game:itemtypes/liquid/cider",
+        "path": "/attributes/mineholme_inebriation_tier",
+        "value": 1
+    },
+    {
+        "op": "add",
+        "file": "game:itemtypes/liquid/spirit",
+        "path": "/attributes/mineholme_inebriation_tier",
+        "value": 2
+    }
+]

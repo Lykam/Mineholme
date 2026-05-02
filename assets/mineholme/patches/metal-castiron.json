@@ -1,0 +1,16 @@
+[
+    {
+        "op": "add",
+        "file": "game:worldproperties/block/metal",
+        "path": "/variants/-",
+        "value": {
+            "code": "castiron",
+            "meltPoint": 1200,
+            "boilPoint": 2862,
+            "density": 7200,
+            "specificHeatCapacity": 0.46,
+            "elemental": false,
+            "tier": 2
+        }
+    }
+]

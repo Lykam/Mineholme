@@ -1,0 +1,8 @@
+[
+    {
+        "op": "add",
+        "file": "game:itemtypes/resource/ingot",
+        "path": "/attributes/requiresAnvilTierByType/ingot-castiron",
+        "value": 99
+    }
+]

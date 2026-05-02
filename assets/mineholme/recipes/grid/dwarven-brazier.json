@@ -1,0 +1,13 @@
+{
+    "ingredientPattern": "_P_,PTP,_P_",
+    "ingredients": {
+        "P": { "type": "item", "code": "game:metalplate-{metal}" },
+        "T": { "type": "block", "code": "game:torch-basic-lit-up" }
+    },
+    "allowedVariants": {
+        "metal": ["copper", "iron", "brass"]
+    },
+    "width": 3,
+    "height": 3,
+    "output": { "type": "block", "code": "mineholme:dwarven-brazier-{metal}", "quantity": 1 }
+}

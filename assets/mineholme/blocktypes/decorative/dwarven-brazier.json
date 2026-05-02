@@ -1,7 +1,7 @@
 {
     "code": "dwarven-brazier",
     "variantgroups": [
-        { "code": "metal", "states": ["iron", "brass"] }
+        { "code": "metal", "states": ["copper", "iron", "brass"] }
     ],
     "drawtype": "JSON",
     "shape": { "base": "game:block/clutter/brazier1" },

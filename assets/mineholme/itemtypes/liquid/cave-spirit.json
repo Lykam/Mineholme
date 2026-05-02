@@ -17,6 +17,7 @@
         ]}
     ],
     "attributes": {
+        "mineholme_inebriation_tier": 2,
         "handbook": { "groupBy": ["cave-spirit"] },
         "waterTightContainerProps": {
             "containable": true,

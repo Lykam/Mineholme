@@ -1,0 +1,19 @@
+[
+    {
+        "ingredientPattern": "III	I I	III",
+        "ingredients": {
+            "I": {
+                "type": "item",
+                "code": "game:ingot-castiron",
+                "isTool": false
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "block",
+            "code": "mineholme:dwarven-cookpot-castiron",
+            "quantity": 1
+        }
+    }
+]

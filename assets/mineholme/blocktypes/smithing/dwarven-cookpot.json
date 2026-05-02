@@ -1,0 +1,30 @@
+{
+    "code": "dwarven-cookpot",
+    "variantgroups": [
+        { "code": "metal", "states": ["castiron"] }
+    ],
+    "shape": { "base": "game:block/clay/pot-opened-empty" },
+    "textures": {
+        "ceramic": { "base": "game:block/metal/ingot/iron" },
+        "transparent": { "base": "game:block/transparent" },
+        "dark": { "base": "game:block/metal/ingot/iron" },
+        "lid": { "base": "game:block/metal/ingot/iron" }
+    },
+    "guiTransform": {
+        "rotation": { "x": -22.6, "y": -125, "z": 0 },
+        "origin": { "x": 0.5, "y": 0.18, "z": 0.5 },
+        "scale": 3.09
+    },
+    "blockmaterial": "Metal",
+    "resistance": 2.0,
+    "maxstacksize": 4,
+    "creativeinventory": { "general": ["*"] },
+    "sounds": {
+        "walk": "walk/stone",
+        "byTool": {
+            "Pickaxe": { "hit": "block/rock-hit-pickaxe", "break": "block/rock-break-pickaxe" }
+        }
+    },
+    "collisionbox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.625, "z2": 0.875 },
+    "selectionbox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.625, "z2": 0.875 }
+}

@@ -1,6 +1,6 @@
 {
-    "code": "cave-mushroom",
-    "class": "BlockCavePlant",
+    "code": "cave-mushroom-crop",
+    "class": "BlockCrop",
     "variantgroups": [
         { "code": "type", "states": [
             "chanterelle", "kingbolete", "commonmorel", "almondmushroom",
@@ -10,22 +10,37 @@
             "jackolantern", "orangeoakbolete", "paddystraw", "puffball", "redwinecap",
             "violetwebcap", "witchhat", "bluemeanie", "foolsconecap", "goldcap",
             "honeymushroom", "laughingjim", "libertycap", "sickener", "wavycap"
-        ]}
+        ]},
+        { "code": "stage", "states": ["1", "2", "3"] }
     ],
     "drawtype": "JSON",
-    "shape": { "base": "game:block/plant/mushroom/{type}/normal1" },
-    "drops": [
-        { "type": "item", "code": "mineholme:cave-mushroom-drop-{type}", "quantity": { "avg": 1, "var": 0 } }
-    ],
+    "shapeByType": {
+        "*-1": { "base": "game:block/plant/mushroom/{type}/harvested1" },
+        "*-2": { "base": "game:block/plant/mushroom/{type}/normal1" },
+        "*-3": { "base": "game:block/plant/mushroom/{type}/normal2" }
+    },
     "attributes": {
-        "forageStatAffected": true
+        "tickGrowthProbability": 0.05,
+        "handbook": { "include": true }
     },
-    "shapeInventory": { "base": "game:item/food/mushroom/{type}" },
-    "guiTransformByType": {
-        "*-chanterelle": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 3.5 },
-        "*": { "rotation": { "x": -22, "y": 107, "z": 0 }, "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }, "scale": 2.5 }
+    "cropProps": {
+        "requiredNutrient": "N",
+        "nutrientConsumption": 15,
+        "growthStages": 3,
+        "totalGrowthMonths": 0.5,
+        "coldDamageBelow": -5,
+        "damageGrowthStuntMul": 0.75,
+        "coldDamageRipeMul": 0.5,
+        "heatDamageAbove": 40
     },
-    "creativeinventory": { "flora": ["*"] },
+    "dropsByType": {
+        "*-3": [
+            { "type": "item", "code": "mineholme:cave-mushroom-drop-{type}", "quantity": { "avg": 2, "var": 1 } }
+        ],
+        "*": [
+            { "type": "item", "code": "mineholme:cave-mushroom-drop-{type}", "quantity": { "avg": 1, "var": 0 } }
+        ]
+    },
     "renderpass": "OpaqueNoCull",
     "randomizeRotations": true,
     "blockmaterial": "Plant",
@@ -33,7 +48,7 @@
     "sidesolid": { "all": false },
     "replaceable": 3000,
     "lightAbsorption": 0,
-    "resistance": 1.5,
+    "resistance": 0.5,
     "collisionbox": null,
     "selectionbox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.25, "z2": 0.875 },
     "sounds": {

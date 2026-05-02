@@ -1,3 +1,4 @@
+using HarmonyLib;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Server;
@@ -6,11 +7,23 @@ namespace Mineholme;
 
 public class MinehomeMod : ModSystem
 {
+    public static ICoreClientAPI? ClientApi;
+
+    private Harmony? harmony;
+
     public override void Start(ICoreAPI api)
     {
         base.Start(api);
         api.RegisterBlockClass("BlockCavePlant", typeof(BlockCavePlant));
         api.RegisterBlockClass("BlockCaveWallMushroom", typeof(BlockCaveWallMushroom));
+        api.RegisterBlockClass("BlockCaveMushroomFloor", typeof(BlockCaveMushroomFloor));
+        api.RegisterBlockClass("BlockMagmaForge", typeof(BlockMagmaForge));
+        api.RegisterItemClass("ItemBrokenToolHead", typeof(ItemBrokenToolHead));
+        api.RegisterItemClass("ItemCaveMushroomDrop", typeof(ItemCaveMushroomDrop));
+        api.RegisterBlockEntityClass("BlockEntityCaveMushroomMycelium", typeof(BlockEntityCaveMushroomMycelium));
+
+        harmony = new Harmony("mineholme");
+        harmony.PatchAll();
     }
 
     public override void StartServerSide(ICoreServerAPI api)
@@ -21,10 +34,20 @@ public class MinehomeMod : ModSystem
     public override void StartClientSide(ICoreClientAPI api)
     {
         base.StartClientSide(api);
+        ClientApi = api;
+
+        // Applied here rather than via PatchAll so the DrunkPerceptionEffect type
+        // is never resolved on a dedicated server.
+        harmony?.Patch(
+            AccessTools.Method(typeof(DrunkPerceptionEffect), nameof(DrunkPerceptionEffect.OnBeforeGameRender)),
+            prefix: new HarmonyMethod(typeof(DrunkCameraPatch), nameof(DrunkCameraPatch.Prefix))
+        );
     }
 
     public override void Dispose()
     {
+        harmony?.UnpatchAll("mineholme");
+        ClientApi = null;
         base.Dispose();
     }
 }
