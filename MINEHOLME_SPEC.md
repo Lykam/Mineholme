@@ -667,20 +667,25 @@ Server admins tune the experience for their community.
 The full vision in this spec is large. It ships in milestones, each of
 which is a complete, playable mod release on its own.
 
-**v0.1 — Flavor and Food.** Surface/underground nutrition split. Drink
-satiety rebalance. Dwarven cooking recipes. Underground mob spawn
-expansion. Initial decorative block palette. Translocator reflavor. A
-playable mod with no C# required, released to gather early feedback.
+**v0.1 — Flavor and Food.** *(Shipped.)* Surface/underground nutrition
+split. Drink satiety rebalance. Dwarven cooking recipes. Underground mob
+spawn expansion. Initial decorative block palette. Translocator
+reflavor.
 
-**v0.2 — Inebriation and Brewing.** The Inebriation system, specialty
-named brews, brew quality tiers. Establishes the "drink is mandatory"
-identity. Mushroom ales added to the catalog. Underground farming bonus
-and surface farming penalty (Y-level-aware crop yield and growth speed —
-first C# farming hook).
+**v0.2 — Inebriation and Brewing.** *(Shipped. Brew quality tiers and
+barrel aging deferred to a later pass.)* The Inebriation system,
+specialty named brews (cave ales, spirits, scotch — 45 variants each),
+mushroom ales, underground farming bonus and surface farming penalty,
+mushroom cultivation (stone/farmland/mycelium), stat-keyed dwarven
+dishes.
 
-**v0.3 — Smithing and Metallurgy.** Scrap recovery, smithing with bits,
-tool head repair, expanded molds, helve hammer fixes, cave-only ore
-spawns. The full smithing rework.
+**v0.3 — Smithing and Metallurgy.** *(In progress.)* Scrap recovery,
+smithing with bits, tool salvage, tool head repair, helve hammer fixes,
+broken-tool recovery. Cast iron as a new material tier (castable, not
+smithable); dwarven cookpot as first cast iron product. Magma forge
+(lava-adjacent, fuel-free). Expanded molds (cast iron gratings, lamp
+posts, hardware). Cave connectivity system (pulled forward from v1.0 —
+links isolated cave volumes via organic tunnels).
 
 **v0.4 — Identity and Legacy.** Masterwork crafting, engravings,
 gravestones, world ages. The systems that give the world memory.
@@ -690,14 +695,14 @@ Drow with full traits, race-aware nutrition, race-specific recipes,
 trader interactions, depth/light comfort framework. The mod's identity
 locks in here.
 
-**v0.6 — Atmosphere and Depth.** Cast iron, magma forge, deep-cave
-audio, massive chambers, underground waterfalls, light shafts, crystal
-formations, bioluminescent flora, forgotten beasts, visible wealth.
-The mod becomes beautiful as well as deep.
+**v0.6 — Atmosphere and Depth.** Deep-cave audio, massive chambers,
+underground waterfalls, light shafts, crystal formations, bioluminescent
+flora, forgotten beasts, visible wealth. The mod becomes beautiful as
+well as deep.
 
-**v1.0 — Worldgen and Hard Systems.** Connected cave networks,
-underground biomes, lost dwarven kingdoms with per-player loot,
-cave-ins, lore-driven small ruins. The headline exploration content.
+**v1.0 — Worldgen and Hard Systems.** Underground biomes, lost dwarven
+kingdoms with per-player loot, cave-ins, lore-driven small ruins. The
+headline exploration content.
 
 **Post-v1.0.** Underground rivers (full hydrology), Dwarven king's
 missive event system, vermin/menagerie ecosystems, additional races
