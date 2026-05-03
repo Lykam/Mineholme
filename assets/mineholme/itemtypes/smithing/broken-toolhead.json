@@ -1,10 +1,7 @@
 {
     "code": "broken-toolhead",
     "class": "ItemBrokenToolHead",
-    "shape": { "base": "game:item/resource/scrapweaponkit" },
-    "textures": {
-        "metal": { "base": "game:item/resource/scrapweaponkit" }
-    },
+    "shape": { "base": "game:item/scrapweaponkit" },
     "guiTransform": {
         "rotation": { "x": -46, "y": 22, "z": -1 },
         "origin": { "x": 0.46, "y": 0, "z": 0.49 },

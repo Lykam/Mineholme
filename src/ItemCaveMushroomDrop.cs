@@ -6,10 +6,11 @@ namespace Mineholme;
 
 public class ItemCaveMushroomDrop : Item
 {
-    static readonly EnumBlockMaterial[] ValidSurfaces = { EnumBlockMaterial.Stone, EnumBlockMaterial.Soil };
+    static readonly EnumBlockMaterial[] ValidSurfaces = { EnumBlockMaterial.Stone };
 
     public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
     {
+        if (!byEntity.Controls.Sneak) return;
         if (blockSel == null || blockSel.Face != BlockFacing.UP) return;
 
         IWorldAccessor world = byEntity.World;

@@ -10,6 +10,11 @@ namespace Mineholme;
 // Tracks how many voxels the player has placed onto the anvil across all ingot additions,
 // then compares that total to the recipe requirement when a craft completes.
 // Excess voxels become metal bits spawned at the anvil.
+//
+// Singleplayer double-call pattern: VS fires TryPlaceOn and OnSplit on the same server-side
+// BlockEntityAnvil twice per player action — once from the client code path and once from
+// the server packet handler. Both calls have World.Side == Server on the shared instance.
+// Each patch that increments a counter must dedup within a single tick (~50 ms window).
 
 // ── CheckIfFinished patches ──────────────────────────────────────────────────
 
@@ -23,9 +28,6 @@ static class AnvilCheckIfFinishedPatch
         public required SmithingRecipe Recipe;
     }
 
-    // ItemHammer fires OnUseOver on the server BlockEntity directly (client-side call)
-    // AND the server fires it again via OnReceivedClientPacket. Both complete CheckIfFinished
-    // in the same tick on the same shared instance. Guard against the duplicate.
     static readonly Dictionary<int, long> _lastScrapMs = new();
 
     [HarmonyPrefix]
@@ -44,13 +46,10 @@ static class AnvilCheckIfFinishedPatch
     [HarmonyPostfix]
     static void Postfix(BlockEntityAnvil __instance, IPlayer byPlayer, FinishState? __state)
     {
-        // Only run when: state captured, recipe completed (workItemStack is now null), server side.
         if (__state == null) return;
         if (__instance.WorkItemStack != null) return; // recipe did not complete
         if (__instance.Api.World.Side != EnumAppSide.Server) return;
 
-        // Deduplicate: client path and server packet path both complete the recipe in the same
-        // tick. Only spawn bits once per anvil per smithing completion event.
         int posKey = __instance.Pos.GetHashCode();
         long nowMs = __instance.Api.World.ElapsedMilliseconds;
         if (_lastScrapMs.TryGetValue(posKey, out long lastMs) && nowMs - lastMs < 500)
@@ -66,11 +65,16 @@ static class AnvilCheckIfFinishedPatch
                 for (int z = 0; z < lz; z++)
                     if (rv[x, y, z]) recipeVoxels++;
 
-        int totalPlaced = __state.WorkItem.Attributes.GetInt("mh_voxelsPlaced", recipeVoxels);
+        int totalPlaced    = __state.WorkItem.Attributes.GetInt("mh_voxelsPlaced", recipeVoxels);
+        int totalCut       = __state.WorkItem.Attributes.GetInt("mh_voxelsCut", 0);
         int scrappedVoxels = Math.Max(0, totalPlaced - recipeVoxels);
 
-        // 42 voxels = 1 ingot = 100 units; 1 bit = 5 units → 2.1 voxels per bit
-        int bits = (int)Math.Floor(scrappedVoxels / 2.1);
+        __instance.Api.Logger.Debug(
+            "[Mineholme] Scrap: placed={0} recipe={1} scrapped={2} cut={3}",
+            totalPlaced, recipeVoxels, scrappedVoxels, totalCut);
+
+        // 1 ingot = 100 units = 42 voxels = 20 nuggets. Each voxel = 2.3 units, each nugget = 5 units.
+        int bits = (int)Math.Floor(totalCut * 2.3 / 5.0);
         if (bits <= 0) return;
 
         string? metal = __state.WorkItem.Collectible?.Variant["metal"];
@@ -93,16 +97,21 @@ static class AnvilCheckIfFinishedPatch
 [HarmonyPatch(typeof(ItemIngot), nameof(ItemIngot.TryPlaceOn))]
 static class ItemIngotTryPlaceOnPatch
 {
+    static readonly Dictionary<int, long> _lastPlaceMs = new();
+
     [HarmonyPostfix]
     static void Postfix(ItemStack stack, BlockEntityAnvil beAnvil, ItemStack? __result)
     {
         if (__result == null) return;
+        if (beAnvil.Api.World.Side != EnumAppSide.Server) return;
 
-        // On first placement WorkItemStack is still null at postfix time (TryPut sets it after);
-        // __result is the new work item in that case.  On subsequent placements WorkItemStack
-        // already holds it.  We update whichever is the live work item on the anvil.
+        int posKey = beAnvil.Pos.GetHashCode();
+        long nowMs = beAnvil.Api.World.ElapsedMilliseconds;
+        if (_lastPlaceMs.TryGetValue(posKey, out long lastMs) && nowMs - lastMs < 50)
+            return;
+        _lastPlaceMs[posKey] = nowMs;
+
         ItemStack target = beAnvil.WorkItemStack ?? __result;
-
         int prev = target.Attributes.GetInt("mh_voxelsPlaced", 0);
         target.Attributes.SetInt("mh_voxelsPlaced", prev + ItemIngot.VoxelCount);
     }
@@ -113,15 +122,52 @@ static class ItemIngotTryPlaceOnPatch
 [HarmonyPatch(typeof(ItemIronBloom), nameof(ItemIronBloom.TryPlaceOn))]
 static class ItemIronBloomTryPlaceOnPatch
 {
+    static readonly Dictionary<int, long> _lastPlaceMs = new();
+
     [HarmonyPostfix]
     static void Postfix(ItemStack stack, BlockEntityAnvil beAnvil, ItemStack? __result)
     {
         if (__result == null) return;
+        if (beAnvil.Api.World.Side != EnumAppSide.Server) return;
 
-        // Iron bloom places itself as the work item; update the result directly.
+        int posKey = beAnvil.Pos.GetHashCode();
+        long nowMs = beAnvil.Api.World.ElapsedMilliseconds;
+        if (_lastPlaceMs.TryGetValue(posKey, out long lastMs) && nowMs - lastMs < 50)
+            return;
+        _lastPlaceMs[posKey] = nowMs;
+
         ItemStack target = beAnvil.WorkItemStack ?? __result;
-
         int prev = target.Attributes.GetInt("mh_voxelsPlaced", 0);
         target.Attributes.SetInt("mh_voxelsPlaced", prev + ItemIngot.VoxelCount);
+    }
+}
+
+// ── BlockEntityAnvil.OnSplit prefix — track chisel cuts ─────────────────────
+// Each chisel cut that removes a metal voxel increments mh_voxelsCut.
+
+[HarmonyPatch(typeof(BlockEntityAnvil), nameof(BlockEntityAnvil.OnSplit))]
+static class SmithingCutTrackPatch
+{
+    static readonly Dictionary<long, long> _lastCutMs = new();
+
+    // Anvil grid is 16×6×16; pack as anvilPosHash * 10000 + (x*400 + y*20 + z), max offset 6115 < 10000.
+    static long CutKey(BlockPos pos, Vec3i v) =>
+        (long)(uint)pos.GetHashCode() * 10000L + v.X * 400 + v.Y * 20 + v.Z;
+
+    [HarmonyPrefix]
+    static void Prefix(BlockEntityAnvil __instance, Vec3i voxelPos)
+    {
+        if (__instance.WorkItemStack == null) return;
+        if (__instance.Api.World.Side != EnumAppSide.Server) return;
+        if (__instance.Voxels[voxelPos.X, voxelPos.Y, voxelPos.Z] != (byte)EnumVoxelMaterial.Metal) return;
+
+        long key = CutKey(__instance.Pos, voxelPos);
+        long nowMs = __instance.Api.World.ElapsedMilliseconds;
+        if (_lastCutMs.TryGetValue(key, out long lastMs) && nowMs - lastMs < 50)
+            return;
+        _lastCutMs[key] = nowMs;
+
+        int prev = __instance.WorkItemStack.Attributes.GetInt("mh_voxelsCut", 0);
+        __instance.WorkItemStack.Attributes.SetInt("mh_voxelsCut", prev + 1);
     }
 }

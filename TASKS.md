@@ -4,6 +4,44 @@ Current milestone: **v0.3 — Smithing and Metallurgy**
 
 ---
 
+## Bugs
+
+### B1. Anvil → bits on first hammer use
+Right-clicking a freshly placed anvil while holding a hammer instantly converts it (or the hammer) to metal bits.
+SmithingBitPatch or SmithingScrapPatch is triggering on the empty-anvil interaction.
+- [ ] Reproduce: smith an anvil, place it, right-click with hammer in hand
+- [ ] Identify which patch fires and why (log the call stack or add a guard for empty work item + no selection)
+- [ ] Add guard so the salvage / scrap path only fires when a work item is already on the anvil
+
+### B2. Soil mushroom planting — immediate reharvest / infinite loop
+Planting a cave mushroom drop on soil places the planted variant and leaves mycelium, but the block
+can be immediately harvested again (the planted block drops the item on break). No growth delay.
+Also: planting fires on right-click only, so it accidentally triggers when the player is eating with
+a mushroom in hand.
+- [ ] Restrict placement to sneak+use (same as block placement), or require the active hand slot check
+- [ ] Disallow immediate harvest: planted block on soil should require a delay (minimum 1 game day)
+  before it drops anything, OR simply disable soil planting and only allow stone + farmland
+- [ ] If soil planting is kept, ensure mycelium only spawns on stone (not soil)
+
+### B3. Wall mushroom orientation — floating / bad placement (Deepbark etc.)
+Wall mushrooms spawn floating or in wrong orientations because the worldgen block patch does not
+guarantee a solid horizontal face exists. The `BlockCaveWallMushroom` class scans for a wall face
+during `TryPlaceBlockForWorldGen` but placement still succeeds in open air.
+- [ ] Audit `BlockCaveWallMushroom.TryPlaceBlockForWorldGen`: confirm it requires a solid adjacent face
+      before placing (not just "checks and tries to orient")
+- [ ] If the solid-face check is missing, add it — bail out and return false if no solid wall found
+- [ ] Also verify the worldgen block patch offsets are correct so spawns target wall-adjacent positions
+
+### B4. Mushroom worldgen — mixed varieties per cluster
+Cave mushroom clusters spawn multiple types in the same patch instead of all being the same variety,
+unlike vanilla above-ground mushrooms which produce uniform-type groups.
+- [ ] Investigate how the worldgen `blocksByType` / block patch is structured in `cave-plants.json`
+- [ ] Each patch entry should spawn only one type across the whole cluster; fix so that each entry in
+  the block patches array is a single-type cluster (one entry per type, not a wildcard that randomly
+  assigns per block)
+
+---
+
 ## In Progress
 
 ---
@@ -59,6 +97,39 @@ Current milestone: **v0.3 — Smithing and Metallurgy**
 - Grid recipe: player can craft the magmaforge block from iron/cast iron components
 - Add to `recipes/grid/smithing/`
 
+### 9. Cave moss texture + logic pass
+Current texture is a fern shape. Replace with a flat spreading moss that reads like the lichen/moss
+that grows on tree bark in vanilla.
+- [ ] Find a suitable vanilla texture or create a new one (look at `block/plant/lichen*` or `block/plant/moss*`)
+- [ ] Update cave-moss blocktype shape/texture reference
+- [ ] Review placement logic: should spread on stone ceilings and walls, not just floors
+- [ ] Tune worldgen spawn rate after texture change so density still reads correctly
+
+---
+
+## Research
+
+### R1. Stability system — underground living incentive
+VS has a sanity / temporal stability system. Research how it works mechanically
+(attributes, decay rates, structure radius bonuses) and design a Mineholme mechanic
+that rewards players for living underground.
+- [ ] Read `EntityBehaviorTemporalStabilityAffected` and related classes in VS source
+- [ ] Understand what boosts stability (player-built structures, temporal gears, distance from rifts)
+- [ ] Design proposal: underground structures provide a stability aura / deep shelter bonus
+- [ ] Determine if this can be implemented via Harmony patch or a registered entity behavior
+
+---
+
+## Future / Post-v0.3
+
+### F1. Handbook pass
+After all v0.3 systems are final, do a full handbook review pass:
+- Show mushroom buff groups and stat effects in item descriptions
+- Add handbook entries for dwarven dishes explaining stat bonuses
+- Add cave ale / scotch flavor text + effect summaries
+- Ensure all mineholme blocks and items have `handbook: { include: true }` set
+- Review handbook order (creativeinventory groups) so items appear logically grouped
+
 ---
 
 ## Done
@@ -67,5 +138,6 @@ Current milestone: **v0.3 — Smithing and Metallurgy**
 - [x] Cast iron material definition (`metal-castiron.json`, textures, anvil tier restriction)
 - [x] Dwarven cookpot block + grid recipe (cast iron)
 - [x] CaveConnectorSystem written (two-phase backbone + component flood-fill)
+- [x] BetterRuins compatibility — `betterruins-castiron.json` patch skips castiron in corroded-sheet recipe
 - [x] All v0.1 features
 - [x] All v0.2 features (brew quality tiers / aging deferred)

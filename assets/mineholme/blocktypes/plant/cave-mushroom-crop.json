@@ -17,7 +17,15 @@
     "shapeByType": {
         "*-1": { "base": "game:block/plant/mushroom/{type}/harvested1" },
         "*-2": { "base": "game:block/plant/mushroom/{type}/normal1" },
-        "*-3": { "base": "game:block/plant/mushroom/{type}/normal2" }
+        "*-3": { "base": "game:block/plant/mushroom/{type}/normal2" },
+        "*-bluemeanie-1":   { "base": "game:block/plant/mushroom/bluemeanie/normal1" },
+        "*-foolsconecap-1": { "base": "game:block/plant/mushroom/foolsconecap/normal1" },
+        "*-goldcap-1":      { "base": "game:block/plant/mushroom/goldcap/normal1" },
+        "*-honeymushroom-1":{ "base": "game:block/plant/mushroom/honeymushroom/normal1" },
+        "*-laughingjim-1":  { "base": "game:block/plant/mushroom/laughingjim/normal1" },
+        "*-libertycap-1":   { "base": "game:block/plant/mushroom/libertycap/normal1" },
+        "*-sickener-1":     { "base": "game:block/plant/mushroom/sickener/normal1" },
+        "*-wavycap-1":      { "base": "game:block/plant/mushroom/wavycap/normal1" }
     },
     "attributes": {
         "tickGrowthProbability": 0.05,

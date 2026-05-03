@@ -55,13 +55,13 @@ static class SmithingBitPatch
 
             if (workMetal != bitMetal) return true;
 
-            // Check temperature
-            float bitTemp     = stack.Collectible.GetTemperature(world, stack);
+            // The work item must be hot enough — contact with glowing iron heats the bit.
+            float workTemp     = __instance.WorkItemStack.Collectible.GetTemperature(world, __instance.WorkItemStack);
             float meltingPoint = stack.Collectible.GetMeltingPoint(world, null, new DummySlot(stack));
-            if (bitTemp < meltingPoint / 2f)
+            if (workTemp < meltingPoint / 2f)
             {
                 if (byPlayer is IServerPlayer sp2)
-                    ((ICoreServerAPI)__instance.Api).SendIngameError(sp2, "mh_bitcold", "Must heat the bit first");
+                    ((ICoreServerAPI)__instance.Api).SendIngameError(sp2, "mh_bitcold", "Work item must be glowing hot first");
                 return true;
             }
 
@@ -85,6 +85,9 @@ static class SmithingBitPatch
         }
 
         // ── Case 2: tool salvage ──────────────────────────────────────────────
+        // Hammers and chisels are smithing tools, not products — never salvage them.
+        if (firstPart == "hammer" || firstPart == "chisel") return true;
+
         string? toolMetal = stack.Collectible.Variant["metal"];
         EnumTool? tool    = stack.Collectible.GetTool(slot);
 
@@ -116,26 +119,47 @@ static class SmithingBitPatch
         return true;
     }
 
-    // Fill up to n empty slots in the 7×2×3 ingot region, bottom layer first.
-    // Returns how many voxels were actually placed.
+    // Fill up to n empty voxels. When a recipe is selected, fills recipe-matching positions
+    // first so bits land where the player needs them. Falls back to the ingot region when
+    // no recipe is selected or the recipe area is already full.
+    // Also increments mh_voxelsPlaced on the work item for scrap tracking.
     internal static int AddNVoxels(BlockEntityAnvil beAnvil, int n)
     {
         int added = 0;
-        // Ingot area: x in [4..10], y in [0..1], z in [6..8]
-        for (int y = 0; y < 2 && added < n; y++)
+        bool[,,]? rv = beAnvil.SelectedRecipe?.Voxels;
+
+        if (rv != null)
         {
-            for (int x = 4; x <= 10 && added < n; x++)
-            {
-                for (int z = 6; z <= 8 && added < n; z++)
-                {
-                    if (beAnvil.Voxels[x, y, z] == (byte)EnumVoxelMaterial.Empty)
-                    {
-                        beAnvil.Voxels[x, y, z] = (byte)EnumVoxelMaterial.Metal;
-                        added++;
-                    }
-                }
-            }
+            int lx = rv.GetLength(0), ly = rv.GetLength(1), lz = rv.GetLength(2);
+            for (int y = 0; y < ly && added < n; y++)
+                for (int x = 0; x < lx && added < n; x++)
+                    for (int z = 0; z < lz && added < n; z++)
+                        if (rv[x, y, z] && beAnvil.Voxels[x, y, z] == (byte)EnumVoxelMaterial.Empty)
+                        {
+                            beAnvil.Voxels[x, y, z] = (byte)EnumVoxelMaterial.Metal;
+                            added++;
+                        }
         }
+
+        if (added < n)
+        {
+            // Fallback: fill ingot region (no recipe selected or recipe area fully filled)
+            for (int y = 0; y < 2 && added < n; y++)
+                for (int x = 4; x <= 10 && added < n; x++)
+                    for (int z = 6; z <= 8 && added < n; z++)
+                        if (beAnvil.Voxels[x, y, z] == (byte)EnumVoxelMaterial.Empty)
+                        {
+                            beAnvil.Voxels[x, y, z] = (byte)EnumVoxelMaterial.Metal;
+                            added++;
+                        }
+        }
+
+        if (added > 0 && beAnvil.WorkItemStack != null)
+        {
+            int prev = beAnvil.WorkItemStack.Attributes.GetInt("mh_voxelsPlaced", 0);
+            beAnvil.WorkItemStack.Attributes.SetInt("mh_voxelsPlaced", prev + added);
+        }
+
         return added;
     }
 

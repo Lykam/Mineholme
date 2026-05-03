@@ -2,7 +2,41 @@
     "code": "cave-moss",
     "class": "BlockCavePlant",
     "drawtype": "JSON",
-    "shape": { "base": "game:block/plant/fern/cinnamonfern/var1" },
+    "shape": { "base": "game:block/plant/flower/1patch-3faces-16x16" },
+    "textures": {
+        "north1": { "base": "game:block/overlay/tintedmoss/patchy1", "alternates": [
+            { "base": "game:block/overlay/tintedmoss/patchy2" },
+            { "base": "game:block/overlay/tintedmoss/patchy3" },
+            { "base": "game:block/overlay/tintedmoss/patchy4" },
+            { "base": "game:block/overlay/tintedmoss/patchy5" },
+            { "base": "game:block/overlay/tintedmoss/patchy6" },
+            { "base": "game:block/overlay/tintedmoss/patchy7" }
+        ]},
+        "south1": { "base": "game:block/overlay/tintedmoss/patchy1", "alternates": [
+            { "base": "game:block/overlay/tintedmoss/patchy2" },
+            { "base": "game:block/overlay/tintedmoss/patchy3" },
+            { "base": "game:block/overlay/tintedmoss/patchy4" },
+            { "base": "game:block/overlay/tintedmoss/patchy5" },
+            { "base": "game:block/overlay/tintedmoss/patchy6" },
+            { "base": "game:block/overlay/tintedmoss/patchy7" }
+        ]},
+        "northTinted1": { "base": "game:block/overlay/tintedmoss/patchy1", "alternates": [
+            { "base": "game:block/overlay/tintedmoss/patchy2" },
+            { "base": "game:block/overlay/tintedmoss/patchy3" },
+            { "base": "game:block/overlay/tintedmoss/patchy4" },
+            { "base": "game:block/overlay/tintedmoss/patchy5" },
+            { "base": "game:block/overlay/tintedmoss/patchy6" },
+            { "base": "game:block/overlay/tintedmoss/patchy7" }
+        ]},
+        "southTinted1": { "base": "game:block/overlay/tintedmoss/patchy1", "alternates": [
+            { "base": "game:block/overlay/tintedmoss/patchy2" },
+            { "base": "game:block/overlay/tintedmoss/patchy3" },
+            { "base": "game:block/overlay/tintedmoss/patchy4" },
+            { "base": "game:block/overlay/tintedmoss/patchy5" },
+            { "base": "game:block/overlay/tintedmoss/patchy6" },
+            { "base": "game:block/overlay/tintedmoss/patchy7" }
+        ]}
+    },
     "attributes": {
         "forageStatAffected": true
     },
@@ -20,7 +54,7 @@
     "lightAbsorption": 0,
     "resistance": 0.5,
     "collisionbox": null,
-    "selectionbox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.375, "z2": 0.875 },
+    "selectionbox": { "x1": 0.125, "y1": 0, "z1": 0.125, "x2": 0.875, "y2": 0.25, "z2": 0.875 },
     "sounds": {
         "place": "block/plant",
         "break": "block/plant",

@@ -60,24 +60,15 @@
     { "blockCodes": ["mineholme:cave-mushroom-foolsconecap"],   "placement": "Underground", "quantity": { "avg": 3, "var": 2 }, "offsetX": { "avg": 0, "var": 3 }, "offsetZ": { "avg": 0, "var": 3 }, "chance": 1 },
     { "blockCodes": ["mineholme:cave-mushroom-deathcap"],       "placement": "Underground", "quantity": { "avg": 3, "var": 1 }, "offsetX": { "avg": 0, "var": 3 }, "offsetZ": { "avg": 0, "var": 3 }, "chance": 1 },
 
-    {
-        "blockCodes": [
-            "mineholme:cave-mushroom-wall-pinkoyster-north",
-            "mineholme:cave-mushroom-wall-whiteoyster-north",
-            "mineholme:cave-mushroom-wall-reishi-north",
-            "mineholme:cave-mushroom-wall-beardedtooth-north",
-            "mineholme:cave-mushroom-wall-chickenofthewoods-north",
-            "mineholme:cave-mushroom-wall-dryadsaddle-north",
-            "mineholme:cave-mushroom-wall-tinderhoof-north",
-            "mineholme:cave-mushroom-wall-deerear-north",
-            "mineholme:cave-mushroom-wall-livermushroom-north",
-            "mineholme:cave-mushroom-wall-funeralbell-north",
-            "mineholme:cave-mushroom-wall-pinkbonnet-north"
-        ],
-        "placement": "Underground",
-        "quantity": { "avg": 4, "var": 2 },
-        "offsetX": { "avg": 0, "var": 5 },
-        "offsetZ": { "avg": 0, "var": 5 },
-        "chance": 20
-    }
+    { "blockCodes": ["mineholme:cave-mushroom-wall-pinkoyster-north"],        "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 10 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-whiteoyster-north"],       "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 10 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-reishi-north"],            "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 8 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-beardedtooth-north"],      "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 8 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-chickenofthewoods-north"], "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 8 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-dryadsaddle-north"],       "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 6 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-tinderhoof-north"],        "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 6 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-deerear-north"],           "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 6 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-livermushroom-north"],     "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 6 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-funeralbell-north"],       "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 5 },
+    { "blockCodes": ["mineholme:cave-mushroom-wall-pinkbonnet-north"],        "placement": "Underground", "quantity": { "avg": 4, "var": 2 }, "offsetX": { "avg": 0, "var": 1 }, "offsetZ": { "avg": 0, "var": 1 }, "chance": 5 }
 ]

@@ -1,6 +1,4 @@
 {
-    "game:item-metalplate-castiron": "Cast iron plate",
-
     "farmland-surface-penalty": "<font color=\"#c47f4a\">Surface exposure: crops grow slower (-20% speed, -30% yield)</font>",
     "farmland-underground-bonus": "<font color=\"#74c46e\">Underground farming: crops grow faster (+25% speed, +50% yield)</font>",
 
@@ -519,16 +517,5 @@
     "broken-toolhead":                     "Broken Tool Head",
 
     "block-magmaforge":                    "Dwarven Magma Forge",
-    "block-magmaforge-desc":               "A dwarven forge crafted to harness lava's heat. Requires no fuel when placed beside molten rock.",
-
-    "game:item-ingot-castiron":                        "Cast iron ingot",
-    "game:item-metalbit-castiron":                     "Cast iron bits",
-    "game:item-workitem-castiron":                     "Work item (Cast iron)",
-    "game:block-metalsheet-castiron-*":                "Cast iron sheet",
-    "game:block-metalblock-new-plain-castiron":        "Cast iron block",
-    "game:block-metalblock-new-riveted-castiron":      "Cast iron block (riveted)",
-    "game:block-metalblock-corroded-plain-castiron":   "Corroded cast iron block",
-    "game:block-metalblock-corroded-riveted-castiron": "Corroded cast iron block (riveted)",
-
-    "block-dwarven-cookpot-castiron":      "Dwarven Cast Iron Cookpot"
+    "block-magmaforge-desc":               "A dwarven forge crafted to harness lava's heat. Requires no fuel when placed beside molten rock."
 }

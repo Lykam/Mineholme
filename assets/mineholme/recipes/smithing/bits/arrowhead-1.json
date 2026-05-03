@@ -1,0 +1,28 @@
+[
+  {
+    "ingredient": {
+      "type": "item",
+      "code": "game:ingot-*",
+      "name": "metal",
+      "allowedVariants": [
+        "copper", "tinbronze", "bismuthbronze", "blackbronze",
+        "silver", "gold", "iron", "meteoriciron", "steel"
+      ]
+    },
+    "pattern": [
+      [
+        "____",
+        "_##_",
+        "_#__",
+        "____"
+      ]
+    ],
+    "code": "mineholme:arrowhead1-{metal}",
+    "name": "1 Arrowhead",
+    "output": {
+      "type": "item",
+      "code": "game:arrowhead-{metal}",
+      "stacksize": 1
+    }
+  }
+]
